@@ -1,0 +1,26 @@
+{
+  "debug": false,
+
+  "secrets": {
+    "session": "SESSION_SECRET"
+  },
+
+  "solar": {
+    "providerName": "PROVIDER_NAME",
+    "loginUrl": "LOGIN_URL",
+    "auth": {
+      "username": "AUTH_USER",
+      "password": "AUTH_PASSWORD"
+    }
+  },
+
+  "aws": {
+    "accessKeyId": "AWS_ACCESS_KEY_ID",
+    "secretAccessKey": "AWS_SECRET_ACCESS_KEY",
+    "region": "AWS_REGION"
+  },
+
+  "user": {
+    "email": "USER_EMAIL"
+  }
+}

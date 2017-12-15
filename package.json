@@ -1,0 +1,40 @@
+{
+  "name": "js-cli-web-crawlers",
+  "version": "1.0.0",
+  "description": "A JavaScript console (cli) app for crawling certain websites and getting data or doing other stuff",
+  "main": "check_solar.js",
+  "scripts": {
+    "lint": "eslint ./",
+    "lint:fix": "eslint --fix ./",
+    "test": "node ./test.js",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com/darwinz/js-cli-web-crawlers"
+  },
+  "keywords": [
+    "JavaScript",
+    "CLI",
+    "Node"
+  ],
+  "author": "Brandon Johnson <bbj1979@gmail.com>",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "aws-sdk": "^2.167.0",
+    "body-parser": "^1.18.2",
+    "config": "1.28.1",
+    "cookie-parser": "^1.4.3",
+    "express": "^4.16.2",
+    "node-horseman": "^3.3.0",
+    "node-rest-client": "^2.0.1",
+    "phantomjs": "^2.1.7"
+  },
+  "devDependencies": {
+    "eslint": "^4.12.0"
+  },
+  "engines": {
+    "node": ">=8.5.0",
+    "npm": ">=5.3.0"
+  }
+}

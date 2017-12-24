@@ -4,6 +4,7 @@ const express = require('express')
 const cookieParser = require('cookie-parser')
 const bodyParser = require('body-parser')
 const config = require('config')
+const addRoutes = require('./routes')
 
 let app = express()
 
@@ -11,6 +12,7 @@ var initMiddleware = (app) => {
   app.use(cookieParser(config.secrets.session))
   app.use(bodyParser.urlencoded({ extended: false })) // get information from html forms
   app.use(bodyParser.json())
+  addRoutes(app)
 }
 
 module.exports.init = (initializedCallback) => {

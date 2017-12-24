@@ -2,7 +2,7 @@
 'use strict'
 
 const assert = require('assert')
-const jsCli = require('./index.js')
+const jsCli = require('./crawlers/run')
 
 const arbitraryMinimumNumberOfConfigProperties = 5
 

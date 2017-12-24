@@ -1,23 +1,21 @@
 'use strict'
 
-const app = require('../server')
 const Horseman = require("node-horseman");
 const phantomInstance = new Horseman();
 const config = require('config')
 const emailHelper = require('../helpers/email_helper')
 
-console.log('STARTING check_solar')
+module.exports = {
+  check_production
+}
 
-app.then(() => console.log('App started'))
-  .then(check_solar)
-  .then(() => { process.exit(0) })
-  .catch(err => {
-    console.error(err)
-    process.exit(-1)
-  })
+if(process.argv.find(arg => arg==='--run')) {
+  check_production()
+}
 
-function check_solar() {
+function check_production() {
   try {
+    console.log('Checking weekly solar production')
     return phantomInstance
       .userAgent('Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_5) ' +
         'AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.89 Safari/537.36')
@@ -36,19 +34,18 @@ function check_solar() {
       .text('div.chart-totals__listing--total')
       .then((result) => {
         try {
-          emailHelper.send_email(
+          return emailHelper.send_email(
             config.get('user.email'),
             config.get('user.email'),
             `Solar Production for ${new Date()}`,
             `The following is the solar production for date: ${new Date()}:\n\n${result}`
           )
-        }
-        catch(err) {
+        } catch(err) {
           console.log(`There was an error => ${err.message}. Stack => ${err.stack}`)
         }
-        return result
       })
       .log()
+      .then()
       .close()
   }
   catch(e) {

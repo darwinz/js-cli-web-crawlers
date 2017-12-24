@@ -14,32 +14,43 @@ module.exports = {
 }
 
 function send_email (from, to, subject, message) {
-  const params = {
-    Destination: {
-      BccAddresses: [],
-      CcAddresses: [],
-      ToAddresses: [to]
-    },
-    Message: {
-      Body: {
-        Html: {
-          Charset: "UTF-8",
-          Data: message
+  return new Promise((resolve, reject) => {
+    console.log('Sending email notification')
+    const params = {
+      Destination: {
+        BccAddresses: [],
+        CcAddresses: [],
+        ToAddresses: [to]
+      },
+      Message: {
+        Body: {
+          Html: {
+            Charset: "UTF-8",
+            Data: message
+          },
+          Text: {
+            Charset: "UTF-8",
+            Data: message
+          }
         },
-        Text: {
+        Subject: {
           Charset: "UTF-8",
-          Data: message
+          Data: subject
         }
       },
-      Subject: {
-        Charset: "UTF-8",
-        Data: subject
-      }
-    },
-    Source: from
-  };
-  ses.sendEmail(params, function(err, data) {
-    if (err) console.log(err, err.stack);
-    else     console.log(data);
-  });
+      Source: from
+    };
+    try{
+      ses.sendEmail(params, (err, data) => {
+        if (err) {
+          reject(`There was an error sending email notification. Error => ${err.message}. Stack => ${err.stack}`)
+        } else {
+          data.message = message
+          resolve(data)
+        }
+      });
+    } catch(e) {
+      reject(`There was an error sending email notification => ${e.message}. Stack => ${e.stack}`)
+    }
+  })
 }

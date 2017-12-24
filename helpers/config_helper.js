@@ -37,10 +37,10 @@ function setup_new_config() {
     return new Promise((resolve, reject) => {
       prompt.start()
       prompt.get(config_props, (err, result) => {
-          if (result) {
-            resolve(result)
+          if (err) {
+            reject(err)
           } else {
-            reject(false)
+            resolve(result)
           }
         })
     })

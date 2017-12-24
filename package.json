@@ -8,6 +8,7 @@
     "lint:fix": "eslint --fix ./",
     "test": "node ./test.js",
     "start": "node server.js",
+    "config:helper": "node ./helpers/config_helper.js",
     "crawlers:vivint": "node ./crawlers/run --crawler=solar",
     "crawlers:solar": "node ./crawlers/run --crawler=solar"
   },
@@ -33,6 +34,7 @@
     "node-horseman": "^3.3.0",
     "node-rest-client": "^2.0.1",
     "phantomjs": "^2.1.7",
+    "prompt": "^1.0.0",
     "replace-in-file": "^3.1.0"
   },
   "devDependencies": {

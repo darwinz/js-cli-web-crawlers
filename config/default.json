@@ -6,11 +6,11 @@
   },
 
   "solar": {
-    "providerName": "PROVIDER_NAME",
-    "loginUrl": "LOGIN_URL",
+    "providerName": "SOLAR_PROVIDER_NAME",
+    "loginUrl": "SOLAR_LOGIN_URL",
     "auth": {
-      "username": "AUTH_USER",
-      "password": "AUTH_PASSWORD"
+      "username": "SOLAR_AUTH_USERNAME",
+      "password": "SOLAR_AUTH_PASSWORD"
     }
   },
 

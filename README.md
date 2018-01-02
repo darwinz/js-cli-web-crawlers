@@ -44,6 +44,11 @@ $ npm start
 $ curl -XGET http://localhost:3000/crawlers/solar/production
 ```
 
+### Crawlers
+
+* Vivint Solar - check production output
+* Google Analytics - check real time analytics data
+
 ### Testing
 
 Integration testing can be run using npm

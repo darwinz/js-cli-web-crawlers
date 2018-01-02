@@ -14,6 +14,14 @@
     }
   },
 
+  "google": {
+    "analyticsUrl": "GOOGLE_ANALYTICS_URL",
+    "auth": {
+      "username": "GOOGLE_AUTH_USERNAME",
+      "password": "GOOGLE_AUTH_PASSWORD"
+    }
+  },
+
   "aws": {
     "accessKeyId": "AWS_ACCESS_KEY_ID",
     "secretAccessKey": "AWS_SECRET_ACCESS_KEY",

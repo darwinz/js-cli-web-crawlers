@@ -28,6 +28,15 @@
     "region": "AWS_REGION"
   },
 
+  "comcast": {
+    "gateway": {
+      "auth": {
+        "username": "COMCAST_GATEWAY_USERNAME",
+        "password": "COMCAST_GATEWAY_PASSWORD"
+      }
+    }
+  },
+
   "user": {
     "email": "USER_EMAIL"
   }

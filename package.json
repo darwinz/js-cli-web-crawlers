@@ -33,9 +33,12 @@
     "fs": "0.0.1-security",
     "node-horseman": "^3.3.0",
     "node-rest-client": "^2.0.1",
+    "phantom": "^6.0.3",
+    "phantomer": "^1.0.7",
     "phantomjs": "^2.1.7",
     "prompt": "^1.0.0",
-    "replace-in-file": "^3.1.0"
+    "replace-in-file": "^3.1.0",
+    "zombie": "^6.1.4"
   },
   "devDependencies": {
     "eslint": "^4.12.0"

@@ -29,7 +29,7 @@
     "body-parser": "^1.18.2",
     "config": "1.28.1",
     "cookie-parser": "^1.4.3",
-    "express": "^4.16.2",
+    "express": "^4.17.3",
     "fs": "0.0.1-security",
     "node-horseman": "^3.3.0",
     "node-rest-client": "^2.0.1",
